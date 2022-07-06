@@ -1,7 +1,9 @@
 import React from "react";
 import {View, StyleSheet, Text, Image, TouchableOpacity, Alert, TextInput} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const Login = ({navigation}) => {
+const Login = ({}) => {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
 
@@ -23,8 +25,10 @@ const Login = ({navigation}) => {
             placeholderTextColor= 'gray'/>
 
             <TouchableOpacity
-                onPress={() => { 
+                onPress={() => {
+                    navigation.navigate('Profile'), 
                     console.log('Presionaste el boton de login')
+                    
                 }}
                 style={styles.button}>
                     <Text style={styles.textbutton}>

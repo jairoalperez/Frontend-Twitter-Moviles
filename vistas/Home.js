@@ -37,6 +37,7 @@ const Home = ({navigation}) => {
           Registrarse
         </Text>
       </TouchableOpacity>
+      
         </View>
     )
 };

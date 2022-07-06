@@ -5,7 +5,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from './vistas/Home'
 import Login from './vistas/Login'
-import Register from "./vistas/Register";
+import Register from "./vistas/Register"
+import Profile from "./vistas/ProfileScreen";
 
 const Stack = createNativeStackNavigator()
 
