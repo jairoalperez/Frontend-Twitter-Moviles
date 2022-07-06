@@ -3,7 +3,7 @@ import {View, StyleSheet, Text, Image, TouchableOpacity, Alert} from "react-nati
 import logo from '../assets/logo.png'
 
 
-const Home = props => {
+const Home = ({navigation}) => {
     return (
 
       <View style={styles.container}>
@@ -17,7 +17,10 @@ const Home = props => {
       />
 
       <TouchableOpacity
-      onPress={() => Alert.alert('Presionaste el boton de iniciar sesion')}
+      onPress={() => {
+        navigation.navigate('Login'), 
+        console.log('Presionaste el boton de login')
+      }}
       style={styles.buttonlogin}>
         <Text style={styles.textbuttonl}>
           Iniciar Sesion
@@ -25,7 +28,10 @@ const Home = props => {
       </TouchableOpacity>
 
       <TouchableOpacity
-      onPress={() => Alert.alert('Presionaste el boton de registrarse')}
+      onPress={() => {
+        navigation.navigate('Register'), 
+        console.log('Presionaste el boton de Register')
+      }}
       style={styles.buttonregister}>
         <Text style={styles.textbuttonr}>
           Registrarse
