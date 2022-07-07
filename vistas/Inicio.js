@@ -1,4 +1,4 @@
-import {View, StyleSheet, Text, Image, TouchableOpacity, Alert} from 'react-native'
+import {View, StyleSheet, Text, Image, TouchableOpacity, Alert, ScrollView} from 'react-native'
 import React from 'react'
 import { ButtonGroup } from '../components/ButtonGroup'
 
