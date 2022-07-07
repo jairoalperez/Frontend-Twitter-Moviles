@@ -1,50 +1,53 @@
-import {View, StyleSheet, Text, Image, TouchableOpacity, Alert} from 'react-native'
-import React from 'react'
+import {View, StyleSheet, Text, Image, TouchableOpacity, Alert, ScrollView} from 'react-native'
+import React, {useState} from 'react'
 import { ButtonGroup } from '../components/ButtonGroup'
+import { useNavigation } from "@react-navigation/native";
+import { Configuracion } from './Configuracion'
 
 const Perfil = () => {
+  const navigation = useNavigation();
 
+    const [username, setUsername] = useState('CR7')
+    const [seguidores, setSeguidores] = useState(70000000)
+    const [seguidos, setSeguidos] = useState(70)
+    const [nombre, setNombre] = useState('Cristiano Ronaldo')
+    const [bio, setBio] = useState('Soy el mejor jugador, de este equipo perdedor, a todos soy superior, un chico estelar, no se que harian sin mi, si yo me fuera de aki, no verian mas hat tricks, todo seria vulgar.')
+    const [direccion, setDireccion] = useState('Manchester')
+    const [fecha, setFecha] = useState('05/02/1985')
+    
+    
+    //Las vistas
   return (
     
     <View style={styles.container}>
     <ButtonGroup/>  
 
-      <View style={styles.containerusername}>
+      <ScrollView contentContainerStyle={styles.containerusername}>
 
-        <Text style={styles.username}>USERNAME</Text>
+        <Text style={styles.username}>{username}</Text>
         
 
           <View style={styles.containerf}>
 
-            <Text style={styles.follows}>Seguidores: xxx            </Text>
-            <Text style={styles.follows}>Seguidos: xxx</Text>
+            <Text style={styles.follows}>Seguidores: {seguidores}</Text>
+            <Text style={styles.follows}>Seguidos: {seguidos}</Text>
 
           </View>
 
           <View style={styles.containerbio}>
 
-            <Text style={styles.nombre}>Nombre Apellido</Text>
-            <Text style={styles.bio}>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</Text>
-
+            <Text style={styles.nombre}>Cristiano Ronaldo</Text>
+            <Text style={styles.bio}>{bio}</Text>
+            <Text style={styles.datosbio}>{fecha} {'\n'}{direccion}</Text>
           </View>
 
           <View style={styles.containerbotones}>
 
-          <TouchableOpacity
-          onPress={() => {
-          //navigation.navigate('Register'), 
-          console.log('Presionaste el boton de Tweets')
-          }}
-          style={styles.button}>
-            <Text style={styles.textbutton}>
-              Tweets
-            </Text>
-          </TouchableOpacity>
 
           <TouchableOpacity
           onPress={() => {
-          //navigation.navigate('Register'), 
-          console.log('Presionaste el boton de Tweets')
+          navigation.navigate('Configuracion'), 
+          console.log('Presionaste el boton de Configuracion')
           }}
           style={styles.button}>
             <Text style={styles.textbutton}>
@@ -53,14 +56,14 @@ const Perfil = () => {
           </TouchableOpacity>
 
           </View>
-
-      </View>
-
+      </ScrollView>
     </View>
     
   )
 }
 
+
+//los estilos
 const styles = StyleSheet.create({
   
   container: {
@@ -71,31 +74,31 @@ const styles = StyleSheet.create({
 
   },
   containerusername: {
-    flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: "whitesmoke",
+    width: 420
 
   },
   containerf: {
-    //flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'flex-start',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: "whitesmoke",
+    marginBottom: 20,
 
   },
   containerbio: {
-    //flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: "whitesmoke",
-    textAlign: 'left'
+    textAlign: 'left',
+    padding: 10,
+    marginBottom: 20,
     
 
   },
   containerbotones: {
-    //flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -114,23 +117,28 @@ const styles = StyleSheet.create({
   nombre: {
     fontSize: 25,
     color: "black",
-    marginBottom: 30,
+    marginBottom: 20,
     fontWeight: 'bold',
     padding: 10,
 
   },
   bio: {
-    fontSize: 25,
+    fontSize: 20,
     color: "white",
-    marginBottom: 30,
     padding: 10,
     backgroundColor: 'darkslategrey'
+  },
+  datosbio: {
+    fontSize: 15,
+    color: "black",
+    padding: 10,
+    backgroundColor: 'whitesmoke'
   },
 
   follows: {
     fontSize: 15,
     color: "black",
-    marginBottom: 50,
+    marginBottom: 15,
     fontWeight: 'bold'
 
   },
@@ -147,7 +155,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 50, 
     width: 150,
-    marginTop: 20
     
 },
   
