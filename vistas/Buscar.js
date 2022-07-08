@@ -1,4 +1,4 @@
-import {View, StyleSheet, Text, Image, TouchableOpacity, Alert, ScrollView} from 'react-native'
+import {View, StyleSheet, Text, Image, TouchableOpacity, Alert, ScrollView, TextInput} from 'react-native'
 import React from 'react'
 import { ButtonGroup } from '../components/ButtonGroup'
 
@@ -9,7 +9,10 @@ const Buscar = () => {
             <ButtonGroup/>
             <ScrollView contentContainerStyle={styles.containerinicio}>
 
-                <Text style={styles.title}>Buscar</Text>
+                <TextInput
+                  style={styles.buscar}
+                  placeholder='@username'
+                />
       
             </ScrollView>
             
@@ -34,13 +37,19 @@ const styles = StyleSheet.create({
       width: 420
   
   },
-  title: {
+  buscar: {
       flex: 1,
-      fontSize: 50,
-      color: "darkslategrey",
-      marginBottom: 50,
+      fontSize: 20,
+      color: "black",
       marginTop:30,
-      justifyContent: 'flex-start'
+      justifyContent: 'flex-start',
+      borderWidth: 2,
+      padding: 10,
+      borderColor: "gray",
+      width: 350,
+      backgroundColor: "white",
+      marginBottom: 10,
+      borderRadius: 40
   
   },
 

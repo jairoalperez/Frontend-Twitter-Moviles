@@ -10,6 +10,7 @@ import Perfil from "./vistas/Perfil"
 import Buscar from './vistas/Buscar'
 import Inicio from './vistas/Inicio'
 import Configuracion from "./vistas/Configuracion";
+import Post from "./vistas/Post"
 
 const Stack = createNativeStackNavigator()
 
@@ -25,6 +26,7 @@ export default function App () {
           <Stack.Screen name="Inicio" component={Inicio}/>
           <Stack.Screen name="Perfil" component={Perfil}/>
           <Stack.Screen name="Configuracion" component={Configuracion}/>
+          <Stack.Screen name="Post" component={Post}/>
         </Stack.Navigator>
       </NavigationContainer>
   )

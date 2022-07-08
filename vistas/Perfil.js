@@ -3,9 +3,12 @@ import React, {useState} from 'react'
 import { ButtonGroup } from '../components/ButtonGroup'
 import { useNavigation } from "@react-navigation/native";
 import { Configuracion } from './Configuracion'
+import Tweet from '../components/Tweet';
 
 const Perfil = () => {
   const navigation = useNavigation();
+
+    //const u = Configuracion.username;
 
     const [username, setUsername] = useState('CR7')
     const [seguidores, setSeguidores] = useState(70000000)
@@ -28,34 +31,41 @@ const Perfil = () => {
         
 
           <View style={styles.containerf}>
-
             <Text style={styles.follows}>Seguidores: {seguidores}</Text>
             <Text style={styles.follows}>Seguidos: {seguidos}</Text>
-
           </View>
 
           <View style={styles.containerbio}>
-
             <Text style={styles.nombre}>Cristiano Ronaldo</Text>
             <Text style={styles.bio}>{bio}</Text>
             <Text style={styles.datosbio}>{fecha} {'\n'}{direccion}</Text>
           </View>
 
           <View style={styles.containerbotones}>
-
-
-          <TouchableOpacity
-          onPress={() => {
-          navigation.navigate('Configuracion'), 
-          console.log('Presionaste el boton de Configuracion')
-          }}
-          style={styles.button}>
-            <Text style={styles.textbutton}>
-              Configuracion
-            </Text>
-          </TouchableOpacity>
-
+            <TouchableOpacity
+            onPress={() => {
+            navigation.navigate('Configuracion'), 
+            console.log('Presionaste el boton de Configuracion')
+            }}
+            style={styles.button}>
+              <Text style={styles.textbutton}>
+                Configuracion
+              </Text>
+            </TouchableOpacity>
           </View>
+
+          <Text style={styles.tweets}>
+            Tweets
+          </Text>
+
+          <Tweet/>
+          <Tweet/>
+          <Tweet/>
+          <Tweet/>
+          <Tweet/>
+
+
+
       </ScrollView>
     </View>
     
@@ -94,7 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: "whitesmoke",
     textAlign: 'left',
     padding: 10,
-    marginBottom: 20,
+    marginBottom: 5,
     
 
   },
@@ -103,7 +113,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: "whitesmoke",
-
+    marginBottom: 20
   },
 
   username: {
@@ -157,6 +167,14 @@ const styles = StyleSheet.create({
     width: 150,
     
 },
+  tweets: {
+    marginTop: 30,
+    fontSize: 30,
+    color: "black",
+    marginBottom: 10,
+    fontWeight: 'bold'
+
+  },
   
 
 })

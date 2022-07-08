@@ -44,7 +44,9 @@ const Register = ({navigation}) => {
 
             <TouchableOpacity
                 onPress={() => { 
+                    navigation.navigate('Home'),
                     console.log('Presionaste el boton de Registrarse')
+                    Alert.alert('Registro Satisfactorio')
                 }}
                 style={styles.button}>
                     <Text style={styles.textbutton}>

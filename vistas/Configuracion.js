@@ -1,12 +1,31 @@
 import React, {useState} from "react";
-import {View, StyleSheet, Text, Image, TouchableOpacity, Alert, ScrollView, TextInput} from 'react-native'
+import {View, StyleSheet, Text, Image, TouchableOpacity, Alert, ScrollView, TextInput, FlatList} from 'react-native'
 import { ButtonGroup } from '../components/ButtonGroup'
 import { useNavigation } from "@react-navigation/native";
 
 const Configuracion = () => {
     const navigation = useNavigation();
 
-    const [username, setUsername] = useState('CR7')
+            const dia= 5
+            const mes= 2
+            const anio= 1985
+
+    const [profiledata, setProfileData] = useState([
+        { 
+            username:'CR7', 
+            seguidores: 70000000,
+            seguidos: 70,
+            nombre: 'Cristiano Ronaldo',
+            bio: 'Soy el mejor jugador, de este equipo perdedor, a todos soy superior, un chico estelar, no se que harian sin mi, si yo me fuera de aki, no verian mas hat tricks, todo seria vulgar.',
+            direccion: 'Manchester',
+            dia: 5,
+            mes: 2,
+            anio: 1985
+        }
+    ])
+    ///const fecha = dia+'/'+mes+'/'+anio
+
+   /* const [username, setUsername] = useState('CR7')
     const [seguidores, setSeguidores] = useState(70000000)
     const [seguidos, setSeguidos] = useState(70)
     const [nombre, setNombre] = useState('Cristiano Ronaldo')
@@ -16,7 +35,7 @@ const Configuracion = () => {
     const [mes, setMes] = useState(2)
     const [anio, setAnio] = useState(1985)
     const fecha = dia+'/'+mes+'/'+anio
-    const [birth, setBirth] = useState(fecha)
+    const [birth, setBirth] = useState(fecha)*/
 
     return (
         <View style={styles.container}>
@@ -33,7 +52,7 @@ const Configuracion = () => {
                     <TextInput
                     maxLength={20} 
                     style={styles.tinput}
-                    placeholder={username}
+                    placeholder={profiledata.username}
                     />
 
                     <Text style={styles.indicacion}>
@@ -42,7 +61,7 @@ const Configuracion = () => {
                     <TextInput
                     maxLength={20}  
                     style={styles.tinput}
-                    placeholder={nombre}
+                    placeholder={profiledata.nombre}
                     />
 
                     <Text style={styles.indicacion}>
@@ -51,11 +70,11 @@ const Configuracion = () => {
                     <TextInput
                     maxLength={100}
                     style={styles.tinput}
-                    placeholder={direccion}
+                    placeholder={profiledata.direccion}
                     />
 
                     <Text style={styles.indicacion}>
-                        Modificar Fecha de Naciomiento:
+                        Modificar Fecha de Nacimiento:
                     </Text>
                     <View style={styles.containerdate}>
                     <TextInput 
@@ -83,7 +102,7 @@ const Configuracion = () => {
                     maxLength={280}
                     multiline 
                     style={styles.tinput}
-                    placeholder={bio}
+                    placeholder={profiledata.bio}
                     />
 
                     <TouchableOpacity
