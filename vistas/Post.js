@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {View, StyleSheet, Text, Image, TouchableOpacity, Alert, ScrollView, TextInput, FlatList} from 'react-native'
+import React from "react";
+import {View, StyleSheet, Text, TouchableOpacity, ScrollView, TextInput} from 'react-native'
 import { ButtonGroup } from '../components/ButtonGroup'
 import { useNavigation } from "@react-navigation/native";
 
@@ -8,11 +8,11 @@ const Post = () =>{
     return (
         <View style={styles.container}>
             <ButtonGroup/>
-            <ScrollView contentContainerStyle={styles.containersetting}>
+            <ScrollView contentContainerStyle={styles.containerpost}>
 
                 <Text style={styles.title}>Publicar Tweet</Text>
 
-                <View style={styles.containersetting2}>
+                <View style={styles.containerpost2}>
 
                     <TextInput
                     multiline
@@ -52,14 +52,14 @@ const Post = () =>{
             backgroundColor: "whitesmoke",
         
           },
-          containersetting: {
+          containerpost: {
               justifyContent: 'flex-start',
               alignItems: 'center',
               backgroundColor: "whitesmoke",
               width: 420
           
           },
-          containersetting2: {
+          containerpost2: {
               justifyContent: 'flex-start',
               alignItems: 'center',
               backgroundColor: "whitesmoke",

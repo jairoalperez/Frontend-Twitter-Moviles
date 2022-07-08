@@ -4,28 +4,9 @@ import { ButtonGroup } from '../components/ButtonGroup'
 import { useNavigation } from "@react-navigation/native";
 
 const Configuracion = () => {
-    const navigation = useNavigation();
+    const navigation = useNavigation();    
 
-            const dia= 5
-            const mes= 2
-            const anio= 1985
-
-    const [profiledata, setProfileData] = useState([
-        { 
-            username:'CR7', 
-            seguidores: 70000000,
-            seguidos: 70,
-            nombre: 'Cristiano Ronaldo',
-            bio: 'Soy el mejor jugador, de este equipo perdedor, a todos soy superior, un chico estelar, no se que harian sin mi, si yo me fuera de aki, no verian mas hat tricks, todo seria vulgar.',
-            direccion: 'Manchester',
-            dia: 5,
-            mes: 2,
-            anio: 1985
-        }
-    ])
-    ///const fecha = dia+'/'+mes+'/'+anio
-
-   /* const [username, setUsername] = useState('CR7')
+    const [username, setUsername] = useState('CR7')
     const [seguidores, setSeguidores] = useState(70000000)
     const [seguidos, setSeguidos] = useState(70)
     const [nombre, setNombre] = useState('Cristiano Ronaldo')
@@ -35,7 +16,7 @@ const Configuracion = () => {
     const [mes, setMes] = useState(2)
     const [anio, setAnio] = useState(1985)
     const fecha = dia+'/'+mes+'/'+anio
-    const [birth, setBirth] = useState(fecha)*/
+    const [birth, setBirth] = useState(fecha)
 
     return (
         <View style={styles.container}>
@@ -52,7 +33,7 @@ const Configuracion = () => {
                     <TextInput
                     maxLength={20} 
                     style={styles.tinput}
-                    placeholder={profiledata.username}
+                    placeholder={username}
                     />
 
                     <Text style={styles.indicacion}>
@@ -61,7 +42,7 @@ const Configuracion = () => {
                     <TextInput
                     maxLength={20}  
                     style={styles.tinput}
-                    placeholder={profiledata.nombre}
+                    placeholder={nombre}
                     />
 
                     <Text style={styles.indicacion}>
@@ -70,7 +51,7 @@ const Configuracion = () => {
                     <TextInput
                     maxLength={100}
                     style={styles.tinput}
-                    placeholder={profiledata.direccion}
+                    placeholder={direccion}
                     />
 
                     <Text style={styles.indicacion}>
@@ -102,7 +83,7 @@ const Configuracion = () => {
                     maxLength={280}
                     multiline 
                     style={styles.tinput}
-                    placeholder={profiledata.bio}
+                    placeholder={bio}
                     />
 
                     <TouchableOpacity

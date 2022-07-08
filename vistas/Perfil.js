@@ -2,13 +2,10 @@ import {View, StyleSheet, Text, Image, TouchableOpacity, Alert, ScrollView} from
 import React, {useState} from 'react'
 import { ButtonGroup } from '../components/ButtonGroup'
 import { useNavigation } from "@react-navigation/native";
-import { Configuracion } from './Configuracion'
 import Tweet from '../components/Tweet';
 
 const Perfil = () => {
   const navigation = useNavigation();
-
-    //const u = Configuracion.username;
 
     const [username, setUsername] = useState('CR7')
     const [seguidores, setSeguidores] = useState(70000000)
@@ -17,7 +14,6 @@ const Perfil = () => {
     const [bio, setBio] = useState('Soy el mejor jugador, de este equipo perdedor, a todos soy superior, un chico estelar, no se que harian sin mi, si yo me fuera de aki, no verian mas hat tricks, todo seria vulgar.')
     const [direccion, setDireccion] = useState('Manchester')
     const [fecha, setFecha] = useState('05/02/1985')
-    
     
     //Las vistas
   return (
@@ -28,7 +24,6 @@ const Perfil = () => {
       <ScrollView contentContainerStyle={styles.containerusername}>
 
         <Text style={styles.username}>{username}</Text>
-        
 
           <View style={styles.containerf}>
             <Text style={styles.follows}>Seguidores: {seguidores}</Text>
@@ -64,14 +59,11 @@ const Perfil = () => {
           <Tweet/>
           <Tweet/>
 
-
-
       </ScrollView>
     </View>
     
   )
 }
-
 
 //los estilos
 const styles = StyleSheet.create({
@@ -105,7 +97,6 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     padding: 10,
     marginBottom: 5,
-    
 
   },
   containerbotones: {

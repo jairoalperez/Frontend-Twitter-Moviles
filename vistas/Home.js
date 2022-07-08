@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
       title: {
         fontSize: 50,
         color: "white",
-        marginBottom: 50
+        marginBottom: 50,
+        fontWeight: 'bold'
     
       },
       image: {
